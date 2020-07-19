@@ -7,7 +7,7 @@ function urlencode() {
 }
 function yoi(){
           url=$(urlencode "${1}")
-          z=$(curl 'https://gdbypass.host/action.php' -H 'User-Agent: Mozilla/5.0 (Android 2.2; Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.19.4 (KHTML, like Gecko) Version/5.0.3 Safari/533.19.4' --compressed -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' -H 'Origin: https://gdbypass.host' -H 'Connection: keep-alive' -H 'Referer: https://gdbypass.host/' --data-raw "link=$url"|
+          z=$(curl -s 'https://gdbypass.host/action.php' -H 'User-Agent: Mozilla/5.0 (Android 2.2; Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.19.4 (KHTML, like Gecko) Version/5.0.3 Safari/533.19.4' --compressed -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' -H 'Origin: https://gdbypass.host' -H 'Connection: keep-alive' -H 'Referer: https://gdbypass.host/' --data-raw "link=$url"|
           grep -oP 'http.?://\S+' |tr -d '"')
           echo -e "succes -> $z"
 }
